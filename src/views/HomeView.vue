@@ -13,5 +13,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <Card v-for="card in magicStore.cards">
+
+  </Card>
 
 </template>
