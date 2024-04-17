@@ -17,7 +17,13 @@ onMounted(async () => {
     <template #title>
       <h2>{{ card.name }}</h2>
     </template>
-   <a href="card.imageUrl">{{ card }}</a> 
+   <!-- <a href="card.imageUrl">{{ card }}</a>  -->
+   <template #content>
+     <img :src="card.imageUrl" alt="card.name" />
+    </template>
+   <template #footer>
+     <p>{{ card.text }}</p>
+    </template>
 
   </Card>
 
