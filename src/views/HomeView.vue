@@ -18,7 +18,6 @@ const computeArr =computed(() => {
       arr.push(magicStore.cards[i]);
     }
   }
-
   return arr
 })
 
@@ -32,7 +31,7 @@ const computeArr =computed(() => {
     </template>
    <!-- <a href="card.imageUrl">{{ card }}</a>  -->
    <template #content>
-     <img class="mx-auto" :src="card.imageUrl" alt="card.name" />
+     <img class="mx-auto rounded-xl" :src="card.imageUrl" alt="card.name" />
     </template>
    <template #footer>
      <RouterLink :to="card.name">{{ card.text }}</RouterLink>
