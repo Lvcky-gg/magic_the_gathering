@@ -1,5 +1,6 @@
 <script setup>
 
+import { computed } from 'vue';
 import { useMagicStore } from '../stores/magic'
 import { onMounted, toRaw } from 'vue';
 
@@ -10,11 +11,22 @@ onMounted(async () => {
   
 })
 
+const computeArr =computed(() => {
+  const arr = [];
+  for (let i = 0; i < magicStore.cards.length; i++) {
+    if (magicStore.cards[i].imageUrl) {
+      arr.push(magicStore.cards[i]);
+    }
+  }
+
+  return arr
+})
+
 </script>
 
 <template>
   <div class="grid xl:grid-cols-5">
-  <Card class="m-2" v-for="card in magicStore.cards" :key="card.name">
+  <Card class="m-2" v-for="card in computeArr" :key="card.name">
     <template #title>
       <h2>{{ card.name }}</h2>
     </template>
