@@ -13,7 +13,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Card v-for="card in magicStore.cards" :key="card.name">
+  <div class="grid xl:grid-cols-5">
+  <Card class="m-2" v-for="card in magicStore.cards" :key="card.name">
     <template #title>
       <h2>{{ card.name }}</h2>
     </template>
@@ -26,5 +27,5 @@ onMounted(async () => {
     </template>
 
   </Card>
-
+</div>
 </template>
